@@ -73,7 +73,6 @@ class SchemaRegistry:
             url_path += f"?subjectPrefix={subject_prefix}"
         elif deleted:
             url_path += f"?deleted=true"
-        print(url_path)
         return await self.client.get(
             url_path, async_client=self.get_async_client(async_client)
         )
