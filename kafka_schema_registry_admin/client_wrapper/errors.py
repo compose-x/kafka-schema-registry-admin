@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache License 2.0
-# Copyright 2021 John Mille <john@ews-network.net>
+# Copyright 2024 John Mille <john@ews-network.net>
 
 from __future__ import annotations
 
