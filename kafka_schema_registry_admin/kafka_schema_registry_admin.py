@@ -63,7 +63,6 @@ class SchemaRegistry:
             url_path += f"?subjectPrefix={subject_prefix}"
         elif deleted:
             url_path += f"?deleted=true"
-        print(url_path)
         return self.client.get(url_path)
 
     def get_subject_versions(self, subject_name: str) -> Response:
