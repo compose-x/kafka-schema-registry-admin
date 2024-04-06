@@ -34,6 +34,7 @@ class Client:
                 basic_auth["basic_auth.username"],
                 basic_auth["basic_auth.password"],
             )
+        self.session = requests.Session()
 
     @evaluate_api_return
     def get(self, api_path: str, *args, **kwargs) -> Response:
@@ -44,7 +45,7 @@ class Client:
         headers.update(self._default_headers)
         url: str = urlparse(self._base_url + api_path).geturl()
 
-        response = requests.get(url, auth=self.auth, *args, **kwargs)
+        response = self.session.get(url, auth=self.auth, *args, **kwargs)
         return response
 
     @evaluate_api_return
@@ -56,7 +57,7 @@ class Client:
         headers.update(self._default_headers)
         headers.update(self._post_headers)
         url: str = urlparse(self._base_url + api_path).geturl()
-        response = requests.post(url, auth=self.auth, *args, **kwargs)
+        response = self.session.post(url, auth=self.auth, *args, **kwargs)
         return response
 
     @evaluate_api_return
@@ -68,7 +69,7 @@ class Client:
         headers.update(self._default_headers)
         url: str = urlparse(self._base_url + api_path).geturl()
 
-        response = requests.put(url, auth=self.auth, *args, **kwargs)
+        response = self.session.put(url, auth=self.auth, *args, **kwargs)
         return response
 
     @evaluate_api_return
@@ -80,5 +81,5 @@ class Client:
         headers.update(self._default_headers)
 
         url: str = urlparse(self._base_url + api_path).geturl()
-        response = requests.delete(url, auth=self.auth, *args, **kwargs)
+        response = self.session.delete(url, auth=self.auth, *args, **kwargs)
         return response
