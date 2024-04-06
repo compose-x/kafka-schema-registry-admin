@@ -1,5 +1,5 @@
 #  SPDX-License-Identifier: Apache License 2.0
-#  Copyright 2020-2021 John Mille <john@ews-network.net>
+#  Copyright 2024 John Mille <john@ews-network.net>
 import json
 from copy import deepcopy
 
@@ -9,33 +9,6 @@ from kafka_schema_registry_admin.client_wrapper.errors import (
     IncompatibleSchema,
     NotFoundException,
 )
-
-
-@pytest.fixture()
-def schema_sample():
-    return {
-        "type": "record",
-        "namespace": "com.mycorp.mynamespace",
-        "name": "value_test_subject",
-        "doc": "Sample schema to help you get started.",
-        "fields": [
-            {
-                "name": "myField1",
-                "type": "int",
-                "doc": "The int type is a 32-bit signed integer.",
-            },
-            {
-                "name": "myField2",
-                "type": "double",
-                "doc": "The double type is a double precision (64-bit) IEEE 754 floating-point number.",
-            },
-            {
-                "name": "myField3",
-                "type": "string",
-                "doc": "The string is a unicode character sequence.",
-            },
-        ],
-    }
 
 
 def test_reset_sr_mode(local_registry):

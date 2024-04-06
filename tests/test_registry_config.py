@@ -1,5 +1,5 @@
 #  SPDX-License-Identifier: Apache License 2.0
-#  Copyright 2020-2021 John Mille <john@ews-network.net>
+#  Copyright 2024 John Mille <john@ews-network.net>
 import json
 from copy import deepcopy
 from os import path
@@ -21,6 +21,7 @@ def test_changing_compatibility(authed_local_registry):
 
 def test_changing_mode(authed_local_registry):
     mode = authed_local_registry.get_mode(as_str=True)
+    print("MODE?", mode)
     assert mode == RegistryMode.READWRITE.value
 
     authed_local_registry.put_mode(RegistryMode.READONLY.value)
