@@ -189,6 +189,16 @@ class SchemaRegistry:
             permanent_url = f"{url}?permanent=true"
             return self.client.delete(permanent_url)
 
+    def get_all_schemas(self) -> Response:
+        """
+        Method to get the list of subjects in the schema registry
+        Undocumented??
+
+        :raises: requests.exceptions.HTTPError
+        """
+        url_path: str = "/schemas"
+        return self.client.get(url_path)
+
     def get_schema_types(self) -> Response:
         """
         Method to get the list of schema types and return the request object
