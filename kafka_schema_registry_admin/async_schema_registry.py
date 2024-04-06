@@ -239,6 +239,11 @@ class SchemaRegistry:
                 permanent_url, async_client=self.get_async_client(async_client)
             )
 
+    async def get_all_schemas(self, async_client: httpx.AsyncClient = None) -> Response:
+        url: str = "/schemas"
+        req = self.client.get(url, async_client=self.get_async_client(async_client))
+        return await req
+
     async def get_schema_types(
         self, async_client: httpx.AsyncClient = None
     ) -> Response:

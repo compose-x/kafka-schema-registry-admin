@@ -88,6 +88,8 @@ async def test_get_all_subjects(async_local_registry):
     assert isinstance(r, list) and r
     r = await async_local_registry.get_all_subjects(subject_prefix="test-subject4")
     assert "test-subject4" in r.json()
+    r = await async_local_registry.get_all_schemas()
+    assert r.json()
 
 
 @pytest.mark.asyncio(scope="session")

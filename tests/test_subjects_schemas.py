@@ -83,6 +83,8 @@ def test_get_all_subjects(local_registry):
     assert isinstance(r, list) and r
     r = local_registry.get_all_subjects(subject_prefix="test-subject4")
     assert "test-subject4" in r.json()
+    r = local_registry.get_all_schemas()
+    assert r.json()
 
 
 def test_get_all_schema_types(local_registry):
