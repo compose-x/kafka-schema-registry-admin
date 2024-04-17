@@ -31,7 +31,7 @@ class CompatibilityMode(Enum):
 class Type(Enum):
     AVRO = "AVRO"
     JSON = "JSON"
-    PROTOBUFF = "PROTOBUF"
+    PROTOBUF = "PROTOBUF"
 
 
 from .kafka_schema_registry_admin import SchemaRegistry
