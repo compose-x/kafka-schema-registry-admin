@@ -7,7 +7,7 @@ from __future__ import annotations
 
 __author__ = """JohnPreston"""
 __email__ = "john@ews-network.net"
-__version__ = "0.5.2"
+__version__ = "0.5.3"
 
 from enum import Enum
 
